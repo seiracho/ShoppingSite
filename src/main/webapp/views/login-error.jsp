@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@page isErrorPage="true" %>
+	pageEncoding="UTF-8"%>
+<%@page isErrorPage="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +9,13 @@
 </head>
 <body>
 
-<p>IDもしくはパスワードが違います</p>
-<form action="login-in.jsp" method="post">
-<input type="submit" value="ログイン画面へ戻る">
+	<p>IDもしくはパスワードが違います</p>
 
-</form>
-<p></p>
+	<!--戻るボタンで再度ログイン画面へ遷移-->
+	<form action="login-in.jsp" method="post">
+		<input type="submit" value="ログイン画面へ戻る">
+
+	</form>
+	
 </body>
 </html>
