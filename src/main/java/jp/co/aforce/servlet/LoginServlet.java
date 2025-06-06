@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import jp.co.aforce.beans.Login;
+import jp.co.aforce.beans.UserBean;
 import jp.co.aforce.dao.LoginDao;
 
 /**
@@ -44,15 +44,28 @@ public class LoginServlet extends HttpServlet {
 			//			formから送信された値を使う
 			//			LoginDaoのsearchメソッド呼び出し
 			//			DBから一致するユーザー検索
-			//			結果をLogin型オブジェクトLoginSetとして受け取る
-			//			☆LoginDaoがメソッド行いLoginSetが返ってきた(return)後
-			Login loginSet = loginDao.search(member_id, password);
+			//			結果をUserBeanオブジェクトloginSetとして受け取る
+			//			☆loginDaoがメソッド行いloginSetが返ってきた(return)後
+			UserBean loginSet = loginDao.search(member_id, password);
 			//ユーザーが存在すれば(値が一致すれば)
 			if (loginSet != null) {
+				String fullNameString=loginSet.getLast_name()+loginSet.getFirst_name();
 				//sessionに保存
-				HttpSession session = request.getSession();
+				//ログイン成功時に初めてセッションが作られる
+				//既にセッションがある→そのセッションを返す
+				HttpSession session = request.getSession(); 
+				//有効期限：30分（秒単位）
+				session.setMaxInactiveInterval(60*30);
 				//BeanオブジェクトをSessionに保存して他ページから取り出せるように
-				session.setAttribute("last_name", loginSet);
+				session.setAttribute("fullNameString", fullNameString);
+				//session属性userにログインしたユーザー情報(UserBean)を保存
+				session.setAttribute("user", loginSet);
+				
+				if (session==null || session.getAttribute("user")==null) {
+					response.sendRedirect("sessionError.jsp");
+					return;
+				}
+				
 				//ログイン画面へforward
 				request.getRequestDispatcher("user-menu.jsp").forward(request, response);
 			} else {

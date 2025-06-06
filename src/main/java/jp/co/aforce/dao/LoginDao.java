@@ -4,17 +4,17 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import jp.co.aforce.beans.Login;
+import jp.co.aforce.beans.UserBean;
 
 //DBにある情報をSQLで検索する専用クラス
 //DAOクラス継承
 public class LoginDao extends DAO {
 	//ログイン情報(Bean)を取得するsearchメソッド
 	//見つかったらLoginオブジェクトにして返す
-	public Login search(String member_id, String password) throws Exception {
+	public UserBean search(String member_id, String password) throws Exception {
 		//見つかったユーザー情報を入れるための変数
 		//最初は見つかってないからnull
-		Login loginSet = null;
+		UserBean loginSet = null;
 		//親クラスDAOにあるgetConnection()使ってDBと接続
 		Connection connection = getConnection();
 		//SQLで命令
@@ -33,7 +33,7 @@ public class LoginDao extends DAO {
 		//結果がある間中身を読み取る
 		while (rs.next()) {
 			//LoginというBeanに値を入れてく
-			loginSet = new Login();
+			loginSet = new UserBean();
 			//rs.getString():DBの中身取り出し
 			//loginSetに保存
 			loginSet.setMember_id(rs.getString("member_id"));
