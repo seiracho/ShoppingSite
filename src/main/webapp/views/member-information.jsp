@@ -1,4 +1,4 @@
-<%@page import="jp.co.aforce.beans.Login"%>
+<%@page import="jp.co.aforce.beans.UserBean"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ if (session == null){
 <!--JSPではsessionを暗黙で持ってるからrequest.getSession(false)は不要 -->
 <!--null なら未ログインと判断してログイン画面にリダイレクト-->
 <%
-Login login=(Login)session.getAttribute("last_name");
+UserBean login=(UserBean)session.getAttribute("user");
 if(login == null){
 	response.sendRedirect("login-in.jsp");
 	return;

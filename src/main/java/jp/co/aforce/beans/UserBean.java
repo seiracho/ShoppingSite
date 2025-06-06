@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 //データ(会員情報)まとめて管理
 //DBで見つかった情報を一時的に入れておく
-public class Login implements Serializable {
+public class UserBean implements Serializable {
 
 	private String member_id;
 	private String password;
@@ -14,7 +14,7 @@ public class Login implements Serializable {
 	private String mail_address;
 
 	//型のコンストラクタ(引数なし)
-	public Login() {
+	public UserBean() {
 
 	}
 
