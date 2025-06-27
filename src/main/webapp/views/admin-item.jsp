@@ -112,11 +112,11 @@ List<ItemBean> itemList = (List<ItemBean>) request.getAttribute("items");
 		</label>
 		 商品説明：<textarea name="description" rows="3" cols="40" required></textarea><br> 
 		 在庫数：<input type="number" name="stock" placeholder="在庫数" required><br>
-		 メイン画像：<input type="file" name="image_url" placeholder="画像URL" required><br>
-		 サブ画像1：<input type="file" name="sub_image1" placeholder="画像URL"><br>
-		 サブ画像2：<input type="file" name="sub_image2" placeholder="画像URL"><br>
-		 サブ画像3：<input type="file" name="sub_image3" placeholder="画像URL"><br>
-		 サブ画像4：<input type="file" name="sub_image4" placeholder="画像URL"><br>
+		 メイン画像：<input type="text" name="image_url" placeholder="画像URL" required><br>
+		 サブ画像1：<input type="text" name="sub_image1" placeholder="画像URL"><br>
+		 サブ画像2：<input type="text" name="sub_image2" placeholder="画像URL"><br>
+		 サブ画像3：<input type="text" name="sub_image3" placeholder="画像URL"><br>
+		 サブ画像4：<input type="text" name="sub_image4" placeholder="画像URL"><br>
 		<button type="submit">登録</button>
 	</form>
 
