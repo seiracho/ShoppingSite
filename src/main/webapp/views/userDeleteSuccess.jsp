@@ -5,10 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>削除完了</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/user-pages.css">
 </head>
 <body>
 <h2>削除完了しました</h2>
-<a href="login-in.jsp">ログイン画面に戻る</a>
+<a class="info-button" href="login-in.jsp">ログイン画面に戻る</a>
 
 </body>
 </html>

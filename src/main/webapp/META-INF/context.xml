@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!-- AWS -->
+<!-- DBのRDS接続用だからローカルとそのまま接続はできない -->
 <Context>
 
 	<Resource name="jdbc/shoppingsite_cho" auth="Container"
 		type="javax.sql.DataSource" maxTotal="100" maxIdle="30"
-		maxWaitMillis="10000" username="root" password="Assumption2078&amp;"
+		maxWaitMillis="10000" username="admin" password="aforce2868"
 		driverClassName="com.mysql.cj.jdbc.Driver"
-		url="jdbc:mysql://localhost:3306/shoppingsite_cho" ></Resource>
+		url="jdbc:mysql://training-2025-mysql-rds.cqf3ld6na4nc.ap-northeast-1.rds.amazonaws.com:3306/shoppingsite_cho" ></Resource>
 
 </Context>
+
+<!-- local -->
+
+<!--<Context>-->
+
+<!--	<Resource name="jdbc/shoppingsite_cho" auth="Container"-->
+<!--		type="javax.sql.DataSource" maxTotal="100" maxIdle="30"-->
+<!--		maxWaitMillis="10000" username="root" password="Assumption2078&amp;"-->
+<!--		driverClassName="com.mysql.cj.jdbc.Driver"-->
+<!--		url="jdbc:mysql://localhost:3306/shoppingsite_cho" ></Resource>-->
+
+<!--</Context>-->

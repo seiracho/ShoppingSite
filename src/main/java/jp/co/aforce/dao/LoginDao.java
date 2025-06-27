@@ -11,7 +11,7 @@ import jp.co.aforce.beans.UserBean;
 public class LoginDao extends DAO {
 	//ログイン情報(Bean)を取得するsearchメソッド
 	//見つかったらLoginオブジェクトにして返す
-	public UserBean search(String member_id, String password) throws Exception {
+	public UserBean search(int member_id, String password, int is_admin) throws Exception {
 		//見つかったユーザー情報を入れるための変数
 		//最初は見つかってないからnull
 		UserBean loginSet = null;
@@ -23,7 +23,7 @@ public class LoginDao extends DAO {
 		//SQLが探した情報を入れる
 		PreparedStatement statement = connection.prepareStatement(sql);
 		//？の設定(実際の値をセット)
-		statement.setString(1, member_id);
+		statement.setInt(1, member_id);
 		statement.setString(2, password);
 		//実際に検索実行し結果をResultSetに入れる
 		ResultSet rs = statement.executeQuery();
@@ -36,12 +36,13 @@ public class LoginDao extends DAO {
 			loginSet = new UserBean();
 			//rs.getString():DBの中身取り出し
 			//loginSetに保存
-			loginSet.setMember_id(rs.getString("member_id"));
+			loginSet.setMember_id(rs.getInt("member_id"));
 			loginSet.setPassword(rs.getString("password"));
 			loginSet.setLast_name(rs.getString("last_name"));
 			loginSet.setFirst_name(rs.getString("first_name"));
 			loginSet.setAddress(rs.getString("address"));
 			loginSet.setMail_address(rs.getString("mail_address"));
+			loginSet.setIs_admin(rs.getInt("is_admin"));
 		}
 		//DBとの接続閉じる
 		connection.close();

@@ -24,7 +24,7 @@ public class UserDeleteServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		//削除ボタン押したときに送られてくるmemberid取得
-		String member_id=request.getParameter("member_id");
+		int member_id = Integer.parseInt(request.getParameter("member_id"));
 		
 		try {
 			//UserBeanにmemberidセット

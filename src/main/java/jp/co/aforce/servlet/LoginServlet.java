@@ -34,8 +34,11 @@ public class LoginServlet extends HttpServlet {
 		//出力ストリーム(ブラウザに文字で返すための)
 		PrintWriter out = response.getWriter();
 		//formから送られてきた値の取得
-		String member_id = request.getParameter("member_id");
+		int member_id = Integer.parseInt(request.getParameter("member_id"));
 		String password = request.getParameter("password");
+		
+		int is_admin=0;
+
 		//LoginDaoクラスのインスタンス(オブジェクト作成)
 		LoginDao loginDao = new LoginDao();
 
@@ -46,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 			//			DBから一致するユーザー検索
 			//			結果をUserBeanオブジェクトloginSetとして受け取る
 			//			☆loginDaoがメソッド行いloginSetが返ってきた(return)後
-			UserBean loginSet = loginDao.search(member_id, password);
+			UserBean loginSet = loginDao.search(member_id, password, is_admin);
 			//ユーザーが存在すれば(値が一致すれば)
 			if (loginSet != null) {
 				String fullNameString=loginSet.getLast_name()+loginSet.getFirst_name();
@@ -60,13 +63,22 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("fullNameString", fullNameString);
 				//session属性userにログインしたユーザー情報(UserBean)を保存
 				session.setAttribute("user", loginSet);
-				
-				if (session==null || session.getAttribute("user")==null) {
-					response.sendRedirect("sessionError.jsp");
+				//ログイン後に元のページに戻る処理
+				String returnTo =(String)session.getAttribute("return_to");
+				if (returnTo !=null) {
+					session.removeAttribute("return_to");
+					response.sendRedirect(request.getContextPath() + "/" + returnTo);
 					return;
 				}
 				
-				//ログイン画面へforward
+				//管理者識別
+				if (loginSet.getIs_admin() == 1) {
+					System.out.println("管理者ログイン成功、admin-home.jspへ遷移");
+					request.getRequestDispatcher("admin-home.jsp").forward(request, response);
+					return;
+				}
+				
+				//ユーザーメニュー画面へforward
 				request.getRequestDispatcher("user-menu.jsp").forward(request, response);
 			} else {
 				//エラー画面へforward

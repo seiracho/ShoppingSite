@@ -1,0 +1,181 @@
+/* h2見出し*/
+h2 {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  color: #1492C7;
+  font-family: 'Quicksand', 'Noto Sans JP', sans-serif;
+}
+
+.main-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  background: #C0E6E0;
+}
+
+.main-visual .overlay {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  max-width: 800px;
+}
+
+.main-visual .main-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.35);
+  padding: 2rem 3rem; border-radius: 12px;
+  text-align: center; backdrop-filter: blur(4px);
+}
+.overlay h1 {
+  font-size: 2.5rem; color: #F8D97A;
+  margin-bottom: .5rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-family: 'Quicksand', 'Noto Sans JP', sans-serif;
+  text-align: center; 
+  margin-top: 15px;
+}
+.overlay p {
+  font-size: 18px;
+  color: #444;
+  text-align: center; 
+  font-family: 'Quicksand', 'Noto Sans JP', sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.item-card{
+	width: 200px;
+	background: rgba(255, 255, 255, 0.75);
+	backdrop-filter: blur(8px); /* ぼかしで透明感 */
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	border-radius: 16px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	padding: 1rem;
+	transition: transform 0.3s;
+	min-width: 200px;  /* 横幅を明示してスライド可能に */
+	flex-shrink: 0;
+}
+
+.item-card:hover{
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(69, 224, 209, 0.3);
+}
+
+.item-img{
+	width: 100%;
+	height: 180px;
+	border-radius: 12px;
+	margin-bottom: 0.5rem;
+	object-fit: cover;
+}
+
+.brand-img{
+	width: 150px;
+	height: 150px;
+	border-radius: 12px;
+	aspect-ratio: 1 / 1; /* 正方形に収める */
+	object-fit: contain;
+	background: #fff;
+}
+
+form {
+	max-width: 800px;
+	margin: 2rem auto;
+	background: #fff;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+form input[type="text"], form textarea {
+	width: 90%;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+}
+
+form input[type="submit"] {
+	background: linear-gradient(135deg,  #43ADAD, #73C1B9);
+	color: #fff;
+	padding: 0.7rem 1.5rem;
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+form input[type="submit"]:hover {
+	background-color: #F8D97A;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.slider {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* スクロールバー非表示 */
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #F8D97A;
+  color: #62C9AB;
+  border: none;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.slide-btn:hover {
+  opacity: 1;
+}
+
+.slide-btn.left {
+  left: 0;
+}
+.slide-btn.right {
+  right: 0;
+}
+
+section {
+  padding: 3rem 1rem;
+  background: #C0E6E0;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}

@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>会員情報</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/user-pages.css">
+
 </head>
 <body>
 
@@ -37,7 +39,10 @@ if(login == null){
 </p>
 </ul>
 
-<a href="user-menu.jsp">ホームへ戻る</a>
+
+
+
+<a class="info-button" href="user-menu.jsp">メニュー画面に戻る</a>
 
 
 </body>

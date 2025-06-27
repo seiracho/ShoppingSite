@@ -1,0 +1,49 @@
+@charset "UTF-8";
+html { font-size: 100%; 
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: #C0E6E0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  padding-top: 80px; /* ヘッダー分 */
+}
+
+/* ヘッダー */
+.main-header {
+  position: sticky; top: 0; z-index: 1000;
+  background: #F8D97A;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.navbar {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 1rem 2rem;
+}
+
+.site a { font-size: 1.6rem; font-weight: bold; color: #43ADAD; font-family: 'Quicksand', 'Noto Sans JP', sans-serif;}
+.nav-links {
+	 display: flex; 
+	 gap: 1rem; 
+	 list-style: none;
+	 padding-left: 0;
+	 margin: 0;
+ }
+.nav-links a {
+  font-size: 1rem; color: inherit;
+  padding: 8px 14px; border-radius: 20px;
+  transition: 0.3s;
+  text-decoration: none;
+  font-weight: 500;
+  background-color: transparent;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid transparent;
+}
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #1492C7;
+  border-color: #45E0D1;
+}
+

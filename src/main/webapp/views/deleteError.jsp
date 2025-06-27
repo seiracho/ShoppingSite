@@ -8,6 +8,6 @@
 </head>
 <body>
 <p>会員情報削除に失敗しました。再度手続きをしてください。</p>
-<a href="user-menu.jsp">ホームに戻る</a>
+<a href="<%=request.getContextPath()%>/adminuserservlet">戻る</a>
 </body>
 </html>

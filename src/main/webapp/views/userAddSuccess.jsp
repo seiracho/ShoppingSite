@@ -8,8 +8,9 @@
 </head>
 <body>
 <h2>新規会員登録完了</h2>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/user-pages.css">
 
 
-<a href="login-in.jsp">ログイン画面に戻る</a>
+<a class="info-button" href="<%=request.getContextPath()%>/homepageshowservlet">ホームページへ戻る</a>
 </body>
 </html>

@@ -6,12 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>会員情報削除</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/user-pages.css">
 </head>
 <body>
 <form action="userdeleteservlet" method="post" onsubmit="return confirmDelete();">
 <input type="hidden" name="member_id" value="${sessionScope.user.member_id }">
 <input type="submit" value="削除">
 </form>
+
+<a class="info-button" href="user-menu.jsp">メニュー画面に戻る</a>
 
 <script type="text/javascript">
 function confirmDelete(){

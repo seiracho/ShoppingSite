@@ -28,7 +28,7 @@ public class UserEditServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter out=response.getWriter();
 		
-		String member_id=request.getParameter("member_id");
+		int member_id = Integer.parseInt(request.getParameter("member_id"));
 		String password=request.getParameter("password");
 		String last_name=request.getParameter("last_name");
 		String first_name=request.getParameter("first_name");

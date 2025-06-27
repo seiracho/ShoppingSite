@@ -6,21 +6,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/user-pages.css">
 </head>
 <body>
 <h2>登録内容は以下でよろしいですか</h2>
 <form action="userAddSuccess.jsp" method="post">
 	ユーザーID：<input type="text" name="member_id" value="${newUserBean.member_id }"><br>
+	パスワード：<input type="password" name="password" value="${newUserBean.password }"><br>
 	名前(姓)：<input type="text" name="last_name" value="${newUserBean.last_name }"><br>
 	名前(名)：<input type="text" name="first_name" value="${newUserBean.first_name }"><br>
 	住所：<input type="text" name="address" value="${newUserBean.address }"><br>
 	メールアドレス：<input type="text" name="mail_address" value="${newUserBean.mail_address }"><br>
-	パスワード：<input type="password" name="password" value="${newUserBean.password }"><br>
+	
 
 	<input type="submit" value="確定">
 
 </form>
-
+<a class="info-button" href="<%=request.getContextPath()%>/homepageshowservlet">ホームページへ戻る</a>
 
 </body>
 </html>
