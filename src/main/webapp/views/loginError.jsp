@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/user-pages.css">
 </head>
 <body>
 <h3>入力したユーザーIDは、すでに登録済みです。別のIDを使用してください。</h3>

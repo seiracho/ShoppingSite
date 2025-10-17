@@ -35,7 +35,7 @@
 		total += subtotal;
 %>
 		<tr>
-			<td><img src="<%= item.getImage_url() %>" width="100"></td>
+			<td><img src="<%= request.getContextPath() + "/" + item.getImage_url() %>" width="100"></td>
 			<td><%=item.getName() %></td>
 			<td><%=item.getPrice() %></td>
 			

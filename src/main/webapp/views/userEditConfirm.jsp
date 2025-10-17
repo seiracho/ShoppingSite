@@ -10,6 +10,7 @@
 <head>
 <meta charset="UTF-8">
 <title>確認画面</title>
+<link rel="stylesheet" href="<%=request.getContextPath()%>/css/user-pages.css">
 </head>
 <body>
 <h2>登録内容は以下でよろしいですか</h2>

@@ -65,7 +65,7 @@
 	<p>注文確定日より5営業日以内にヤマト運輸にて発送いたします。</p>
 	<p>MyPageからも注文履歴の確認ができます。</p>
 	<a href="<%=request.getContextPath()%>/views/user-menu.jsp">MyPage</a>
-	<a href="<%=request.getContextPath()%>/views/home-page.jsp">ホームページに戻る</a>
+	<a href="<%=request.getContextPath()%>/homepageshowservlet">ホームページに戻る</a>
 </div>
 
 </body>
